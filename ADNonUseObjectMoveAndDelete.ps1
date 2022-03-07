@@ -1,10 +1,10 @@
 # SearchPath değişkeni tarama yapılması istenen OU’nun DN i olmalı
 
-$SearchPath ="OU=Server Computers,OU=All Computers,DC=fw,DC=garanti,DC=com,DC=tr"
+$SearchPath ="OU=Server Computers,OU=All Computers,DC=fw,DC=*****,DC=com,DC=tr"
 
 # MovedPath değişkeni sunucularun taşınacağı OU’nun DN i olmalı
 
-$MovedPath = "OU=WillBeDeleted,OU=Server Computers,OU=All Computers,DC=fw,DC=garanti,DC=com,DC=tr"
+$MovedPath = "OU=WillBeDeleted,OU=Server Computers,OU=All Computers,DC=fw,DC=*****,DC=com,DC=tr"
 
  
 
@@ -26,7 +26,7 @@ $disabledcomp=$move.name
 
 Get-ADComputer -identity $move.name | Move-ADObject -TargetPath $MovedPath
 
-Disable-ADAccount -identity "CN=$disabledcomp,OU=WillBeDeleted,OU=Server Computers,OU=All Computers,DC=fw,DC=garanti,DC=com,DC=tr"
+Disable-ADAccount -identity "CN=$disabledcomp,OU=WillBeDeleted,OU=Server Computers,OU=All Computers,DC=fw,DC=*****,DC=com,DC=tr"
 
 }
 
