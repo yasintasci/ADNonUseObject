@@ -26,6 +26,8 @@ $disabledcomp=$move.name
 
 Get-ADComputer -identity $move.name | Move-ADObject -TargetPath $MovedPath
 
+Set-ADComputer -Identity $move.name -Description "$datestring  tarihinde 90 gundur domaine login olmadigi belirlenmis ve disabled edilmistir"
+
 Disable-ADAccount -identity "CN=$disabledcomp,OU=WillBeDeleted,OU=Server Computers,OU=All Computers,DC=fw,DC=*****,DC=com,DC=tr"
 
 }
