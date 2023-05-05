@@ -1,0 +1,1 @@
+ Get-ADObject -SearchBase (get-addomain).deletedobjectscontainer -IncludeDeletedObjects -filter ("objectsid -eq 'S-1-5-21-***-***-3524834754-57540'") -Properties objectsid,sAMAccountName,displayname  | ft samaccountname,objectsid,displayname 
